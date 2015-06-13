@@ -14,6 +14,7 @@ Player::Player(int x, int y): gun(){
   al_init_font_addon();
   al_init_ttf_addon();
   soldier = al_load_bitmap("soldier.png");
+  soldier_shoot = al_load_bitmap("soldier_shoot.png");
   scope = al_load_bitmap("scope.png");
   qtdAmmo = al_load_font("Roboto-Regular.ttf", 25, 0);
 }
@@ -44,8 +45,11 @@ void Player::getUp(){
   //draw();
 }
 
-void Player::shoot(){
-  gun->shootOne();
+int Player::shoot(){
+  al_draw_bitmap(soldier_shoot, pos_x, pos_y, 0);
+  al_flip_display();
+  al_rest(0.1);
+  return gun->shoot();
 }
 
 Player::~Player(){

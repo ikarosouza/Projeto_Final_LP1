@@ -12,7 +12,8 @@ public:
   // int projeteis_ptr;
 
   Map(int width, int height);
-  void draw();
+  void drawBack();
+  void drawWall();
   ~Map();
   // void adicionar_campeao(Campeao *campeao);
 

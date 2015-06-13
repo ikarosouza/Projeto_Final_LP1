@@ -1,6 +1,6 @@
 #include "gun.h"
 #include "ammo.h"
 
-void Gun::shootOne(){
-  ammo.popBullet();
+int Gun::shoot(){
+  return ammo.popBullet();
 }

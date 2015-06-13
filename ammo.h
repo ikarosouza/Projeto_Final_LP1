@@ -11,7 +11,7 @@ public:
   int getQtd() { return qtd; };
   Bullet getBullet() { return bullets; }
   void addQtd(int q);
-  void popBullet();
+  int popBullet();
 };
 
 #endif

@@ -22,13 +22,14 @@ void Ammo::addQtd(int q){
   qtd += q;
 }
 
-void Ammo::popBullet(){
+int Ammo::popBullet(){
+  Bullet aux(10);
   if(qtd > 0){
-    Bullet aux(10);
     aux = bullets;
     bullets = *(aux.getNext());
     qtd--;
   } else {
     cout << "Sem balas\n";
   }
+  return aux.getDmg();
 }

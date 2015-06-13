@@ -14,6 +14,7 @@ class Player {
   bool is_down;
   Gun *gun;
   ALLEGRO_BITMAP *soldier;
+  ALLEGRO_BITMAP *soldier_shoot;
   ALLEGRO_BITMAP *scope;
   ALLEGRO_FONT *qtdAmmo;
 public:
@@ -27,7 +28,7 @@ public:
   void draw();
   void getDown();
   void getUp();
-  void shoot();
+  int shoot();
   ~Player();
   
 };

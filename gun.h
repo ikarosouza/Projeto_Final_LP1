@@ -8,7 +8,7 @@ class Gun {
 public:
   Gun(): ammo(){};
   Ammo getAmmo() { return ammo; }
-  void shootOne();
+  int shoot();
 };
 
 #endif
