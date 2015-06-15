@@ -4,12 +4,17 @@
 #include "ammo.h"
 
 class Gun {
-  Ammo ammo;
+  int qtd;
+  Ammo *head;
+  Ammo *tail;
 public:
-  Gun(): ammo(){};
-  Ammo getAmmo() { return ammo; }
-  int shoot();
+  Gun();
+  int getAmmo() { return qtd; }
+  void create();
+  int shoot(int lvl);
+  void reload(int q);
+  void insertAmmo();
+  void removeAmmo();
 };
 
 #endif
-

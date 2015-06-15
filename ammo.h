@@ -1,17 +1,22 @@
 #ifndef _AMMO_H_
 #define _AMMO_H_
 
-#include "bullet.h"
+#include <iostream>
 
 class Ammo {
-  Bullet bullets;
-  int qtd;
+  int dmg;
+  Ammo *next;
 public:
   Ammo();
-  int getQtd() { return qtd; };
-  Bullet getBullet() { return bullets; }
-  void addQtd(int q);
+  int getDmg() { return dmg; };
+  Ammo* getNext() { return next; }
+  void setNext(Ammo *n) { next = n; };
   int popBullet();
 };
 
 #endif
+
+inline Ammo::Ammo(){
+  dmg = 10;
+  next = NULL;
+}

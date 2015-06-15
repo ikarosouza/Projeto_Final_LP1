@@ -12,25 +12,28 @@ struct Position{
 };
 
 class Enemy{
-  static int total;
+  static int total, lvl_base;
   int id;
-  int life, lvl, dmg, drop;
+  int life, dmg, drop, lvl;
   Position pos;
   ALLEGRO_BITMAP *enemy;
+  ALLEGRO_BITMAP *enemy_shoot;
   bool is_alive;
   Enemy *next;
   ALLEGRO_FONT *font;
 public:
-  Enemy(int lvl);
+  Enemy();
   int getId();
   Enemy* getNext() { return next; }
   void setNext(Enemy *enemy) { next = enemy; }
   void getHit(int hurt);
   bool isHover(ALLEGRO_MOUSE_STATE mouse);
-  int shoot() { return dmg; };
+  int shoot();
   void draw(); 
   bool getStatus(){ return is_alive; }
   Position getPos(){ return pos; }
+  int getDrop() { return drop; }
+  int getLvl() { return lvl; }
 };
 
 #endif
